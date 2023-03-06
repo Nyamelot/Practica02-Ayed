@@ -21,7 +21,9 @@ template<class T>
 class matrix_t
 {
 public:
+  //constructor
   matrix_t(const int = 0, const int = 0);
+  //destructor
   ~matrix_t();
   
   void resize(const int, const int);

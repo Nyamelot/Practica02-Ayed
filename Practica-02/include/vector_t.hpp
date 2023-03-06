@@ -19,7 +19,9 @@ template<class T>
 class vector_t
 {
 public:
+  //constructor
   vector_t(const int = 0);
+  //destructor
   ~vector_t();
   
   void resize(const int);
@@ -44,7 +46,7 @@ public:
 
 private:
   T *v_;
-  int sz_;
+  int size_;
   
   void build(void);
   void destroy(void);
@@ -54,7 +56,7 @@ private:
 
 template<class T>
 vector_t<T>::vector_t(const int n)
-{ sz_ = n;
+{ size_ = n;
   build();
 }
 
@@ -73,8 +75,8 @@ void
 vector_t<T>::build()
 {
   v_ = NULL;
-  if (sz_ != 0) {
-    v_ = new T[sz_];
+  if (size_ != 0) {
+    v_ = new T[size_];
     assert(v_ != NULL);
   }
 }
@@ -89,7 +91,7 @@ vector_t<T>::destroy()
     delete[] v_;
     v_ = NULL;
   }
-  sz_ = 0;
+  size_ = 0;
 }
 
 
@@ -99,7 +101,7 @@ void
 vector_t<T>::resize(const int n)
 {
   destroy();
-  sz_ = n;
+  size_ = n;
   build();
 }
 
@@ -119,7 +121,7 @@ template<class T>
 inline int
 vector_t<T>::get_size() const
 {
-  return sz_;
+  return size_;
 }
 
 
@@ -188,9 +190,9 @@ template<class T>
 void
 vector_t<T>::read(istream& is)
 {
-  is >> sz_;
-  resize(sz_);
-  for (int i = 0; i < sz_; ++i)
+  is >> size_;
+  resize(size_);
+  for (int i = 0; i < size_; ++i)
     is >> at(i);
 }
 
