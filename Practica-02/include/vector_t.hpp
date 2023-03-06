@@ -13,6 +13,8 @@
 #include <iostream>
 #include <cassert>
 
+#include "../include/rational_t.hpp"
+
 using namespace std;
 
 template<class T>
@@ -200,15 +202,25 @@ vector_t<T>::read(istream& is)
 // FASE II: producto escalar
 template<class T>
 T
-scal_prod(const vector_t<T>& v, const vector_t<T>& w)
-{
-  // rellenar código
+scal_prod(const vector_t<T>& v, const vector_t<T>& w) {
+  T producto_escalar = 0;
+  T multiplicacion;
+  for (int i = 0; i < v.get_size() && i < w.get_size(); i++) {
+    multiplicacion = v.at(i) * w.at(i);
+    producto_escalar = producto_escalar + multiplicacion;
+  }
+  return producto_escalar;
 }
 
 
 
 double
-scal_prod(const vector_t<rational_t>& v, const vector_t<rational_t>& w)
-{
-  // rellenar código 
+scal_prod(const vector_t<rational_t>& v, const vector_t<rational_t>& w) {
+  double producto_escalar = 0;
+  double multiplicacion;
+  for (int i = 0; i < v.get_size() && i < w.get_size(); i++) {
+    multiplicacion = v.at(i).value() * w.at(i).value();
+    producto_escalar = producto_escalar + multiplicacion;
+  }
+  return producto_escalar;
 }
