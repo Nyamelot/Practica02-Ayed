@@ -183,7 +183,14 @@ matrix_t<T>::pos(const int i, const int j) const
 // FASE III: producto matricial
 template<class T>
 void
-matrix_t<T>::multiply(const matrix_t<T>& A, const matrix_t<T>& B)
-{
-  // rellenar código
+matrix_t<T>::multiply(const matrix_t<T>& matrix1, const matrix_t<T>& matrix2) {
+  assert(matrix1.get_n() == matrix2.get_m());
+  resize()
+  for (int i = 1; i <= matrix1.get_m(); i++) {
+    for (int j = 1; j <= matrix2.get_n(); j++) {
+      for (int k = 1; k <= matrix2.get_m(); k++) {
+        at(i, j) = at(i, j) + matrix1.at(i, k) * matrix2.at(k, j);
+      }
+    }
+  }
 }
