@@ -47,6 +47,9 @@ public:
   void write(ostream& = cout) const;
   void read(istream& = cin);
 
+  //modificacion
+  template<class T> T SumaDosADos(const vector_t<T>& v, const vector_t<T>& w);
+
 private:
   T *v_;
   int size_;
@@ -198,3 +201,9 @@ double scal_prod(const vector_t<rational_t>& v, const vector_t<rational_t>& w) {
   }
   return producto_escalar;
 }
+
+//modificación
+template<class T> SumaDosADos(const vector_t<T>& v, const vector_t<T>& w) {
+  assert (v.get_size() == w.get_size());
+}
+
