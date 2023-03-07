@@ -54,7 +54,10 @@ int main()
   
   cout << "Producto escalar de vector_t<rational_t>: " << scal_prod(x, y) << endl << endl;
   
-  
+  cout << "Suma dos a dos: (";
+  SumaDosADos(x);
+  cout << ")" << endl;
+   
   // FASE III
   matrix_t<double> A, B, C;
   A.read(), A.write();

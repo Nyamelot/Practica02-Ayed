@@ -48,7 +48,7 @@ public:
   void read(istream& = cin);
 
   //modificacion
-  template<class T> T SumaDosADos(const vector_t<T>& v, const vector_t<T>& w);
+  void SumaDosADos(const vector_t<rational_t>& v);
 
 private:
   T *v_;
@@ -203,7 +203,11 @@ double scal_prod(const vector_t<rational_t>& v, const vector_t<rational_t>& w) {
 }
 
 //modificación
-template<class T> SumaDosADos(const vector_t<T>& v, const vector_t<T>& w) {
-  assert (v.get_size() == w.get_size());
+void SumaDosADos(const vector_t<rational_t>& v) {
+  double suma_dos_a_dos;
+  for (int i = 0; i < v.get_size()-1; i++) {
+    suma_dos_a_dos = v.at(i).value() + v.at(i+1).value();
+    cout << suma_dos_a_dos << " ";
+  }
 }
 
