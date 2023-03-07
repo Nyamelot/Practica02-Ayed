@@ -1,12 +1,13 @@
-// AUTOR: 
-// FECHA: 
-// EMAIL: 
+
+// AUTOR: Jose Angel Portillo Garcia
+// FECHA: 05/03/2023
+// EMAIL: alu0101568232@ull.edu.es
 // VERSION: 1.0
 // ASIGNATURA: Algoritmos y Estructuras de Datos
 // PRÁCTICA Nº: 2
 // COMENTARIOS: se indican entre [] las pautas de estilo aplicadas de
 //              "C++ Programming Style Guidelines"
-//              https://geosoft.no/development/cppstyle.html
+//              https://google.github.io/styleguide/cppguide.html
 
 #pragma once
 
@@ -56,25 +57,21 @@ private:
 
 
 
-template<class T>
-vector_t<T>::vector_t(const int n)
+template<class T> vector_t<T>::vector_t(const int n)
 { size_ = n;
   build();
 }
 
 
 
-template<class T>
-vector_t<T>::~vector_t()
+template<class T> vector_t<T>::~vector_t()
 {
   destroy();
 }
 
 
 
-template<class T>
-void
-vector_t<T>::build()
+template<class T> void vector_t<T>::build()
 {
   v_ = NULL;
   if (size_ != 0) {
@@ -85,9 +82,7 @@ vector_t<T>::build()
 
 
 
-template<class T>
-void
-vector_t<T>::destroy()
+template<class T> void vector_t<T>::destroy()
 {
   if (v_ != NULL) {
     delete[] v_;
@@ -98,9 +93,7 @@ vector_t<T>::destroy()
 
 
 
-template<class T>
-void
-vector_t<T>::resize(const int n)
+template<class T> void vector_t<T>::resize(const int n)
 {
   destroy();
   size_ = n;
@@ -109,9 +102,7 @@ vector_t<T>::resize(const int n)
 
 
 
-template<class T>
-inline T
-vector_t<T>::get_val(const int i) const
+template<class T> inline T vector_t<T>::get_val(const int i) const
 {
   assert(i >= 0 && i < get_size());
   return v_[i];
@@ -119,18 +110,14 @@ vector_t<T>::get_val(const int i) const
 
 
 
-template<class T>
-inline int
-vector_t<T>::get_size() const
+template<class T> inline int vector_t<T>::get_size() const
 {
   return size_;
 }
 
 
 
-template<class T>
-void
-vector_t<T>::set_val(const int i, const T d)
+template<class T> void vector_t<T>::set_val(const int i, const T d)
 {
   assert(i >= 0 && i < get_size());
   v_[i] = d;
@@ -138,9 +125,7 @@ vector_t<T>::set_val(const int i, const T d)
 
 
 
-template<class T>
-T&
-vector_t<T>::at(const int i)
+template<class T> T& vector_t<T>::at(const int i)
 {
   assert(i >= 0 && i < get_size());
   return v_[i];
@@ -148,18 +133,14 @@ vector_t<T>::at(const int i)
 
 
 
-template<class T>
-T&
-vector_t<T>::operator[](const int i)
+template<class T> T& vector_t<T>::operator[](const int i)
 {
   return at(i);
 }
 
 
 
-template<class T>
-const T&
-vector_t<T>::at(const int i) const
+template<class T> const T& vector_t<T>::at(const int i) const
 {
   assert(i >= 0 && i < get_size());
   return v_[i];
@@ -167,18 +148,14 @@ vector_t<T>::at(const int i) const
 
 
 
-template<class T>
-const T&
-vector_t<T>::operator[](const int i) const
+template<class T> const T& vector_t<T>::operator[](const int i) const
 {
   return at(i);
 }
 
 
 
-template<class T>
-void
-vector_t<T>::write(ostream& os) const
+template<class T> void vector_t<T>::write(ostream& os) const
 { 
   os << get_size() << ":\t";
   for (int i = 0; i < get_size(); i++)
@@ -188,9 +165,7 @@ vector_t<T>::write(ostream& os) const
 
 
 
-template<class T>
-void
-vector_t<T>::read(istream& is)
+template<class T> void vector_t<T>::read(istream& is)
 {
   is >> size_;
   resize(size_);
@@ -200,9 +175,7 @@ vector_t<T>::read(istream& is)
 
 
 // FASE II: producto escalar
-template<class T>
-T
-scal_prod(const vector_t<T>& v, const vector_t<T>& w) {
+template<class T> T scal_prod(const vector_t<T>& v, const vector_t<T>& w) {
   assert(v.get_size() == w.get_size());
   T producto_escalar = 0;
   T multiplicacion;
@@ -215,8 +188,7 @@ scal_prod(const vector_t<T>& v, const vector_t<T>& w) {
 
 
 
-double
-scal_prod(const vector_t<rational_t>& v, const vector_t<rational_t>& w) {
+double scal_prod(const vector_t<rational_t>& v, const vector_t<rational_t>& w) {
   assert(v.get_size() == w.get_size());
   double producto_escalar = 0;
   double multiplicacion;

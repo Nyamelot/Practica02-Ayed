@@ -1,24 +1,23 @@
-// AUTOR: 
-// FECHA: 
-// EMAIL: 
+
+// AUTOR: Jose Angel Portillo Garcia
+// FECHA: 05/03/2023
+// EMAIL: alu0101568232@ull.edu.es
 // VERSION: 1.0
 // ASIGNATURA: Algoritmos y Estructuras de Datos
 // PRÁCTICA Nº: 2
 // COMENTARIOS: se indican entre [] las pautas de estilo aplicadas de
 //              "C++ Programming Style Guidelines"
-//              https://geosoft.no/development/cppstyle.html
-// COMPILACIÓN: g++ -g rational_t.cpp main_p2.cpp -o main_p2
+//              https://google.github.io/styleguide/cppguide.html
+// COMPILACIÓN: make build
 
-// pauta de estilo [92]: comentarios multilínea usando solo "//"
+// pauta de estilo [Comment Style]: Use either the // or /* */ syntax, as long as you are consistent.
 
 #include <iostream>
 #include <cmath>
 
 // pauta de estilo [41]: ficheros de cabecera agrupados y separados
 #include "../include/rational_t.hpp"
-
 #include "../include/vector_t.hpp"
-
 #include "../include/matrix_t.hpp"
 
 using namespace std;

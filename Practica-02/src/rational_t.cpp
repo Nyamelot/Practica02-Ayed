@@ -1,12 +1,13 @@
-// AUTOR: 
-// FECHA: 
-// EMAIL: 
+
+// AUTOR: Jose Angel Portillo Garcia
+// FECHA: 05/03/2023
+// EMAIL: alu0101568232@ull.edu.es
 // VERSION: 1.0
 // ASIGNATURA: Algoritmos y Estructuras de Datos
 // PRÁCTICA Nº: 2
 // COMENTARIOS: se indican entre [] las pautas de estilo aplicadas de
 //              "C++ Programming Style Guidelines"
-//              https://geosoft.no/development/cppstyle.html
+//              https://google.github.io/styleguide/cppguide.html
 
 // pauta de estilo [92]: comentarios multilínea usando solo "//"
 

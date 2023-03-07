@@ -1,12 +1,13 @@
-// AUTOR: 
-// FECHA: 
-// EMAIL: 
+
+// AUTOR: Jose Angel Portillo Garcia
+// FECHA: 05/03/2023
+// EMAIL: alu0101568232@ull.edu.es
 // VERSION: 1.0
 // ASIGNATURA: Algoritmos y Estructuras de Datos
 // PRÁCTICA Nº: 2
 // COMENTARIOS: se indican entre [] las pautas de estilo aplicadas de
 //              "C++ Programming Style Guidelines"
-//              https://geosoft.no/development/cppstyle.html
+//              https://google.github.io/styleguide/cppguide.html
 
 #pragma once
 
@@ -55,8 +56,7 @@ private:
 
 
 
-template<class T>
-matrix_t<T>::matrix_t(const int m, const int n)
+template<class T> matrix_t<T>::matrix_t(const int m, const int n)
 { 
   m_ = m;
   n_ = n;
@@ -65,15 +65,12 @@ matrix_t<T>::matrix_t(const int m, const int n)
 
 
 
-template<class T>
-matrix_t<T>::~matrix_t()
+template<class T>matrix_t<T>::~matrix_t()
 {}
 
 
 
-template<class T>
-void
-matrix_t<T>::resize(const int m, const int n)
+template<class T> void matrix_t<T>::resize(const int m, const int n)
 {
   assert(m > 0 && n > 0);
   m_ = m;
@@ -83,27 +80,21 @@ matrix_t<T>::resize(const int m, const int n)
 
 
 
-template<class T>
-inline int
-matrix_t<T>::get_m() const
+template<class T> inline int matrix_t<T>::get_m() const
 {
   return m_;
 }
 
 
 
-template<class T>
-inline int
-matrix_t<T>::get_n() const
+template<class T> inline int matrix_t<T>::get_n() const
 {
   return n_;
 }
 
 
 
-template<class T>
-T&
-matrix_t<T>::at(const int i, const int j)
+template<class T> T& matrix_t<T>::at(const int i, const int j)
 {
   assert(i > 0 && i <= get_m());
   assert(j > 0 && j <= get_n());
@@ -112,18 +103,14 @@ matrix_t<T>::at(const int i, const int j)
 
 
 
-template<class T>
-T&
-matrix_t<T>::operator()(const int i, const int j)
+template<class T> T& matrix_t<T>::operator()(const int i, const int j)
 {
   return at(i, j);
 }
 
 
 
-template<class T>
-const T&
-matrix_t<T>::at(const int i, const int j) const
+template<class T> const T& matrix_t<T>::at(const int i, const int j) const
 {
   assert(i > 0 && i <= get_m());
   assert(j > 0 && j <= get_n());
@@ -132,18 +119,14 @@ matrix_t<T>::at(const int i, const int j) const
 
 
 
-template<class T>
-const T&
-matrix_t<T>::operator()(const int i, const int j) const
+template<class T> const T& matrix_t<T>::operator()(const int i, const int j) const
 {
   return at(i, j);
 }
 
 
 
-template<class T>
-void
-matrix_t<T>::write(ostream& os) const
+template<class T> void matrix_t<T>::write(ostream& os) const
 { 
   os << get_m() << "x" << get_n() << endl;
   for (int i = 1; i <= get_m(); ++i) {
@@ -156,9 +139,7 @@ matrix_t<T>::write(ostream& os) const
 
 
 
-template<class T>
-void
-matrix_t<T>::read(istream& is)
+template<class T> void matrix_t<T>::read(istream& is)
 {
   is >> m_ >> n_;
   resize(m_, n_);
@@ -168,10 +149,7 @@ matrix_t<T>::read(istream& is)
 }
 
 
-template<class T>
-inline
-int
-matrix_t<T>::pos(const int i, const int j) const
+template<class T> inline int matrix_t<T>::pos(const int i, const int j) const
 {
   assert(i > 0 && i <= get_m());
   assert(j > 0 && j <= get_n());
@@ -181,9 +159,7 @@ matrix_t<T>::pos(const int i, const int j) const
 
 
 // FASE III: producto matricial
-template<class T>
-void
-matrix_t<T>::multiply(const matrix_t<T>& matrix1, const matrix_t<T>& matrix2) {
+template<class T> void matrix_t<T>::multiply(const matrix_t<T>& matrix1, const matrix_t<T>& matrix2) {
   assert(matrix1.get_n() == matrix2.get_m());
   resize(matrix1.get_m(), matrix2.get_n());
   for (int i = 1; i <= matrix1.get_m(); i++) {
