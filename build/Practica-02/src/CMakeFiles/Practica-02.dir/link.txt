@@ -1,1 +1,1 @@
-/usr/bin/c++ -g CMakeFiles/Practica-02.dir/main_p2.cpp.o CMakeFiles/Practica-02.dir/rational_t.cpp.o -o ../../bin/Practica-02 
+/usr/bin/c++ -g "CMakeFiles/Practica-02.dir/main_p2.cpp.o" "CMakeFiles/Practica-02.dir/rational_t.cpp.o" -o ../../bin/Practica-02 
